@@ -1,5 +1,21 @@
-<script setup></script>
+<script setup>
+import AppHeader from "./components/AppHeader.vue";
+import CatalogList from "./components/shoppingApp/catalog/CatalogList.vue";
 
-<template></template>
+import Cart from "./components/shoppingApp/cart/Cart.vue";
+import AppFooter from "./components/AppFooter.vue";
+</script>
+
+<template>
+  <app-header></app-header>
+  <main class="container mx-auto py-8 px-4 flex flex-wrap">
+    <catalog-list></catalog-list>
+
+    <cart></cart>
+
+    <!-- Shopping Cart Section -->
+  </main>
+  <app-footer></app-footer>
+</template>
 
 <style scoped></style>
