@@ -1,6 +1,12 @@
 <script setup>
+import { onMounted } from "vue";
+import { itemsStore } from "@/stores/items";
 import CartList from "./CartList.vue";
 import PayementEL from "./PayementEL.vue";
+onMounted(() => {
+  itemsStore.init();
+  console.table(itemsStore.itemsList);
+});
 </script>
 
 <template>

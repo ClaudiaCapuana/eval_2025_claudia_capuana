@@ -6,7 +6,7 @@ const products = reactive([]);
 async function init(apiURL) {
   DB.setApiUrl(apiURL);
   const data = await DB.findAll();
-  products.splice(0, products.length, ...data); // remplace proprement
+  products.splice(0, products.length, ...data);
 }
 
 export const productsStore = reactive({
