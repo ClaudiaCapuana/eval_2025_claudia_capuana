@@ -1,4 +1,4 @@
-import { reactive } from "vue";
+import { reactive, computed, ref } from "vue";
 import DB from "@/services/DB";
 
 const itemsList = reactive([]);
@@ -40,10 +40,37 @@ const deleteItem = (id) => {
   }
 };
 
+const subTotal = computed(() => {
+  return itemsList
+    .reduce(
+      (total, item) => total + Number(item.price) * Number(item.quantity),
+      0
+    )
+    .toFixed(2);
+});
+
+const taxeTva = computed(() => {
+  return Number(subTotal.value * 0.2).toFixed(2);
+});
+
+const deliveryCost = ref(5);
+
+const total = computed(() => {
+  return (
+    Number(subTotal.value) +
+    Number(deliveryCost.value) +
+    Number(taxeTva.value)
+  ).toFixed(2);
+});
+
 export const itemsStore = reactive({
   init,
   itemsList,
   addCartList,
   updateQuantity,
   deleteItem,
+  subTotal,
+  taxeTva,
+  deliveryCost,
+  total,
 });
