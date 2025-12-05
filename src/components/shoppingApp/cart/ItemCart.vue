@@ -21,7 +21,10 @@ const srcimg = `https://picsum.photos/300/200/?random=${props.item.id}`;
         min="1"
         @change="itemsStore.updateQuantity(props.item.id, $event.target.value)"
       />
-      <button class="ml-2 text-red-500 hover:text-red-700">
+      <button
+        class="ml-2 text-red-500 hover:text-red-700"
+        @click="itemsStore.deleteItem(props.item.id)"
+      >
         <i class="fas fa-times"></i>
       </button>
     </div>

@@ -31,9 +31,19 @@ const updateQuantity = (id, quantity) => {
   DB.UpdateQuantity(itemsList);
 };
 
+const deleteItem = (id) => {
+  const index = itemsList.findIndex((item) => item.id === id);
+
+  if (id !== -1) {
+    itemsList.splice(index, 1);
+    DB.deleteItem(itemsList);
+  }
+};
+
 export const itemsStore = reactive({
   init,
   itemsList,
   addCartList,
   updateQuantity,
+  deleteItem,
 });

@@ -22,4 +22,7 @@ export default class DB {
   static UpdateQuantity(items) {
     localStorage.setItem("items", JSON.stringify(items));
   }
+  static deleteItem(items) {
+    localStorage.setItem("items", JSON.stringify(items));
+  }
 }
