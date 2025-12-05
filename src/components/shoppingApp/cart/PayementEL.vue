@@ -1,4 +1,5 @@
 <script setup>
+import MyButton from "@/components/UI/MyButton.vue";
 import { itemsStore } from "@/stores/items";
 </script>
 
@@ -26,12 +27,7 @@ import { itemsStore } from "@/stores/items";
       <span><strong>Total Général:</strong></span>
       <span>{{ itemsStore.total }}€</span>
     </div>
-    <button
-      class="mt-4 w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cart-btn"
-      @click="itemsStore.resetCart"
-    >
-      Procéder au paiement
-    </button>
+    <my-button @click="itemsStore.resetCart">Procéder au paiement</my-button>
   </div>
 </template>
 
