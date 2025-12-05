@@ -63,6 +63,11 @@ const total = computed(() => {
   ).toFixed(2);
 });
 
+const resetCart = () => {
+  itemsList.length = 0;
+  DB.resetCart(itemsList);
+};
+
 export const itemsStore = reactive({
   init,
   itemsList,
@@ -73,4 +78,5 @@ export const itemsStore = reactive({
   taxeTva,
   deliveryCost,
   total,
+  resetCart,
 });

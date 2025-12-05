@@ -25,4 +25,8 @@ export default class DB {
   static deleteItem(items) {
     localStorage.setItem("items", JSON.stringify(items));
   }
+
+  static resetCart(items) {
+    localStorage.setItem("items", JSON.stringify(items));
+  }
 }
