@@ -18,4 +18,8 @@ export default class DB {
     });
     return response.json();
   }
+
+  static UpdateQuantity(items) {
+    localStorage.setItem("items", JSON.stringify(items));
+  }
 }

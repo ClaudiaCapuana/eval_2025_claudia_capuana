@@ -24,8 +24,16 @@ const addCartList = (item) => {
   }
 };
 
+const updateQuantity = (id, quantity) => {
+  console.log(id, quantity);
+  const index = itemsList.findIndex((item) => item.id === id);
+  itemsList[index].quantity = Number(quantity);
+  DB.UpdateQuantity(itemsList);
+};
+
 export const itemsStore = reactive({
   init,
   itemsList,
   addCartList,
+  updateQuantity,
 });

@@ -1,4 +1,6 @@
 <script setup>
+import { itemsStore } from "@/stores/items";
+
 const props = defineProps({ item: { type: Object, required: true } });
 const srcimg = `https://picsum.photos/300/200/?random=${props.item.id}`;
 </script>
@@ -17,6 +19,7 @@ const srcimg = `https://picsum.photos/300/200/?random=${props.item.id}`;
         class="form-input mt-1 block w-16 text-center rounded text-gray-700 border-gray-300 border"
         :value="props.item.quantity"
         min="1"
+        @change="itemsStore.updateQuantity(props.item.id, $event.target.value)"
       />
       <button class="ml-2 text-red-500 hover:text-red-700">
         <i class="fas fa-times"></i>
