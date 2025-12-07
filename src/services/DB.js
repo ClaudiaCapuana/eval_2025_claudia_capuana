@@ -1,6 +1,6 @@
 export default class DB {
-  static setApiUrl(data) {
-    this.apiURL = data;
+  static setApiUrl(url) {
+    this.apiURL = url;
   }
 
   static async findAll() {
@@ -8,25 +8,23 @@ export default class DB {
     return response.json();
   }
 
-  static createItemCart(items) {
-    localStorage.setItem("items", JSON.stringify(items));
-  }
+  //   static createItemCart(items) {
+  //     localStorage.setItem("items", JSON.stringify(items));
+  //   }
 
-  static async deleteOne(id) {
-    const response = await fetch(this.apiURL + "product/" + id, {
-      method: "DELETE",
-    });
-    return response.json();
-  }
+  //   static UpdateQuantity(items) {
+  //     localStorage.setItem("items", JSON.stringify(items));
+  //   }
+  //   static deleteItem(items) {
+  //     localStorage.setItem("items", JSON.stringify(items));
+  //   }
 
-  static UpdateQuantity(items) {
-    localStorage.setItem("items", JSON.stringify(items));
-  }
-  static deleteItem(items) {
-    localStorage.setItem("items", JSON.stringify(items));
-  }
+  //   static resetCart(items) {
+  //     localStorage.setItem("items", JSON.stringify(items));
+  //   }
 
-  static resetCart(items) {
+  // fonction générale qui permet d'update le Local Storage
+  static updateLocalStorage(items) {
     localStorage.setItem("items", JSON.stringify(items));
   }
 }
