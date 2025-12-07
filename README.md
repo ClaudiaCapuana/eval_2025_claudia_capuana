@@ -1,38 +1,35 @@
-# eval_claudie
+# Déploiement Netlify – Projet E-commerce (Vue.js)
 
-This template should help get you started developing with Vue 3 in Vite.
+## Fonctionnalités obligatoires
 
-## Recommended IDE Setup
+- **Liste dynamique des produits** depuis **MockAPI**
+- **Ajout d’un produit au panier**
+- **Liste dynamique des produits du panier**
+- **Calcul dynamique du total HTVA**
+- **Modification de la quantité** des produits dans le panier
+- **Suppression** des produits du panier
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## Structure du projet
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### Store `products`
 
-## Customize configuration
+- Basé sur un fichier `DB.js`
+- Contient les appels à MockAPI et la logique pour gérer les produits
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Store `shoppingCart`
 
-## Project Setup
+- Gère l'état du panier (produits, quantités, total, etc.)
 
-```sh
-npm install
-```
+---
 
-### Compile and Hot-Reload for Development
+## Fonctionnalités optionnelles
 
-```sh
-npm run dev
-```
+- **Calcul dynamique de la TVA**
+- **Modification des frais de port**
+- **Sauvegarde du panier dans le `localStorage`** via un _watcher_
+- Boutons UI créés en composants :
+  - `./components/ui/MyButton.vue`
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+---
