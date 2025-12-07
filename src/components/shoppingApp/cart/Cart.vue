@@ -2,7 +2,7 @@
 import { onMounted } from "vue";
 import { itemsStore } from "@/stores/items";
 import CartList from "./CartList.vue";
-import PayementEL from "./PayementEl.vue";
+import CartCheckout from "./CartCheckout.vue";
 onMounted(() => {
   itemsStore.init();
   console.table(itemsStore.itemsList);
@@ -15,7 +15,7 @@ onMounted(() => {
     <div class="cart bg-white rounded-lg shadow animate__animated">
       <cart-list></cart-list>
       <div class="bg-gray-50">
-        <payement-e-l></payement-e-l>
+        <cart-checkout></cart-checkout>
       </div>
     </div>
   </aside>

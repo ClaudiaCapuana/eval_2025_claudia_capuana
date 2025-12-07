@@ -7,7 +7,7 @@ import vueDevTools from "vite-plugin-vue-devtools";
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
-  base: "/eval_2025_claudia_capuana/",
+
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
